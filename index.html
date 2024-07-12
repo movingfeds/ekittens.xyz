@@ -1,116 +1,102 @@
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en" style="background: var(--bs-emphasis-color);">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>DoxyBin</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-<style>
-        body > :not(#overlay) {
-            display: none;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shi-Zo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            opacity: 0;
+            transition: opacity 2s;
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+
+        video.background-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            color: white;
+            background: #007BFF;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .buttons a:hover {
+            background: #0056b3;
+        }
+
+        .buttons a.discord {
+            background: #7289DA;
+        }
+
+        .buttons a.discord:hover {
+            background: #5a6dab;
         }
     </style>
 </head>
-
-<body style="background: var(--bs-emphasis-color);">    <audio id="audio" loop>
-        <source src="https://files.catbox.moe/rzcqlk.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>    <div id="overlay" onclick="startSite()">
-        <div><a href="#">Click here to enter</a></div>
-    </div>
-
-    <h1 class="text-center rainbow-text" style="color: var(--bs-body-bg);text-shadow: 0px 0px 6px;">HALL OF AUTISM</h1>
-    <div class="container">
-        <div class="row" style="height: auto;">
-            <div class="col">
-                <div class="card" style="background: var(--bs-body-color);">
-                    <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-top: 0;"><img class="d-xl-flex" width="150" height="150" src="https://files.catbox.moe/fospy9.jpg" style="margin-top: 53px;" loading="auto"></div>
-                    <div class="card-body" style="height: 165.8px;color: var(--bs-body-bg);">
-                        <h4 class="text-center card-title rainbow-text" style="margin-top: 0;">Inga Ostojska</h4>
-                        <p class="scrollable-box" style="font-size: 13px;margin-bottom: 0px;">A lying slut ekitten who lies abt her age n catfishes minors.</p><a class="d-xl-flex justify-content-xl-center" href="https://files.catbox.moe/6zipzd.txt">Dox</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="background: var(--bs-body-color);">
-                    <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-top: 0;"><img class="d-xl-flex" width="150" height="150" src="" style="margin-top: 53px;" loading="auto"></div>
-                    <div class="card-body" style="height: 165.8px;color: var(--bs-body-bg);">
-                        <h4 class="text-center card-title rainbow-text" style="margin-top: 0;">Kristina Cregg</h4>
-                        <p class="scrollable-box" style="font-size: 13px;margin-bottom: 0px;">KristinaCregg dad is an criminal, this families crime syndicate band of chronically ill candidates believes they're unstoppable. While also living at a 250k shack planning their next masterful plan to grind ROBLOX.</p><a class="d-xl-flex justify-content-xl-center" href="https://files.catbox.moe/nwvtto.txt" style="margin-bottom: 0px;">Dox</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="background: var(--bs-body-color);">
-                    <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-top: 0;"><img class="d-xl-flex" width="150" height="150" src="https://files.catbox.moe/kfr1j6.png" style="margin-top: 53px;" loading="auto"></div>
-                    <div class="card-body" style="height: 165.8px;color: var(--bs-body-bg);">
-                        <h4 class="text-center card-title rainbow-text" style="margin-top: 0;">Ella Thomas</h4>
-                        <p class="scrollable-box" style="font-size: 13px;margin-bottom: 0px;">About a girl who had a really high ego and tried fighting with me.When i told her the information of hers she did get pretty shocked and got really upset over it and left the server</p><a class="d-xl-flex justify-content-xl-center" href="https://files.catbox.moe/8lesl6.txt">Dox</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row" style="height: auto;margin-top: 1em;">
-            <div class="col">
-                <div class="card" style="background: var(--bs-body-color);">
-                    <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-top: 0;"><img class="d-xl-flex" width="150" height="150" src="https://files.catbox.moe/luff24.png" style="margin-top: 53px;" loading="auto"></div>
-                    <div class="card-body" style="height: 165.8px;color: var(--bs-body-bg);">
-                        <h4 class="text-center card-title rainbow-text" style="margin-top: 0;">Natalia Martinez</h4>
-                        <p class="scrollable-box" style="font-size: 13px;margin-bottom: 0px;height: 78px;">?need esluts & ewhores who will send ^_^? you can choose from the 4 options below !! (ALL ARE OVER THE AGE OF 18)</p><a class="d-xl-flex justify-content-xl-center" href="https://files.catbox.moe/9lcein.txt">Dox</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="background: var(--bs-body-color);">
-                    <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-top: 0;"><img class="d-xl-flex" width="150" height="150" src="https://files.catbox.moe/97xs0y.jpeg" style="margin-top: 53px;" loading="auto"></div>
-                    <div class="card-body" style="height: 165.8px;color: var(--bs-body-bg);">
-                        <h4 class="text-center card-title rainbow-text" style="margin-top: 0;">Valentina Sanchez</h4>
-                        <p class="scrollable-box" style="font-size: 13px;margin-bottom: 0px;">?need esluts & ewhores who will send ^_^? you can choose from the 4 options below !! (ALL ARE OVER THE AGE OF 18)</p><a class="d-xl-flex justify-content-xl-center" href="https://doxbin.com/upload/WannabeTheEwhore" style="margin-bottom: 0px;">Dox</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="background: var(--bs-body-color);">
-                    <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-top: 0;"><img class="d-xl-flex" width="150" height="150" src="https://files.catbox.moe/l2i0sk.png" style="margin-top: 53px;" loading="auto"></div>
-                    <div class="card-body" style="height: 165.8px;color: var(--bs-body-bg);">
-                        <h4 class="text-center card-title rainbow-text" style="margin-top: 0;">Haley Ivette Solis</h4>
-                        <p class="scrollable-box" style="font-size: 13px;margin-bottom: 0px;">?need esluts & ewhores who will send ^_^? you can choose from the 4 options below !! (ALL ARE OVER THE AGE OF 18)</p><a class="d-xl-flex justify-content-xl-center" href="https://files.catbox.moe/9lcein.txt">Dox</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row" style="height: auto;margin-top: 1em;">
-            <div class="col">
-                <div class="card" style="background: var(--bs-body-color);">
-                    <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-top: 0;"><img class="d-xl-flex" width="150" height="150" src="https://files.catbox.moe/7o443b.png" style="margin-top: 53px;" loading="auto"></div>
-                    <div class="card-body" style="height: 165.8px;color: var(--bs-body-bg);">
-                        <h4 class="text-center card-title rainbow-text" style="margin-top: 0;">Kathryn Park</h4>
-                        <p class="scrollable-box" style="font-size: 13px;margin-bottom: 0px;height: 78px;">Leaking my friends phone number, shit talks anyone, piss kink, degrading kink, FAT<br><br><br></p><a class="d-xl-flex justify-content-xl-center" href="https://files.catbox.moe/d1yg5x.txt">Dox</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="background: var(--bs-body-color);">
-                    <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-top: 0;"><img class="d-xl-flex" width="150" height="150" src="https://files.catbox.moe/i2cwlo.png" style="margin-top: 53px;" loading="auto"></div>
-                    <div class="card-body" style="height: 165.8px;color: var(--bs-body-bg);">
-                        <h4 class="text-center card-title rainbow-text" style="margin-top: 0;">Emily Madden</h4>
-                        <p class="scrollable-box" style="font-size: 13px;margin-bottom: 0px;">18year old slut sending her nudes to minors.</p><a class="d-xl-flex justify-content-xl-center" href="https://files.catbox.moe/2s4rv3.txt">Dox</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="background: var(--bs-body-color);">
-                    <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-top: 0;"><img class="d-xl-flex" width="150" height="150" src="" style="margin-top: 53px;" loading="auto"></div>
-                    <div class="card-body" style="height: 165.8px;color: var(--bs-body-bg);">
-                        <h4 class="text-center card-title rainbow-text" style="margin-top: 0;">Dishana/Irish</h4>
-                        <p class="scrollable-box" style="font-size: 13px;margin-bottom: 0px;">She's a complete whore in real life.She always likes to be close with other guys while dating one and telling him "i only want u". Overall, she's one of those cringe lowlife indian girls.</p><a class="d-xl-flex justify-content-xl-center" href="https://files.catbox.moe/tfyh0i.txt">Dox</a>
-                    </div>
-                </div>
-            </div>
+<body>
+    <video class="background-video" autoplay muted loop>
+        <source src="https://cdn.discordapp.com/attachments/1234929930882781325/1261328128270139422/0001-0250.mp4?ex=66928edc&is=66913d5c&hm=0dc08e233aac1521427a77ea095217449e84aa22a64ff75724ced8d7c6db5e7e&" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="overlay"></div>
+    <div class="content">
+        <h1>Shi-Zo</h1>
+        <h1>Always Free, Always UD.</h1>
+        <div class="buttons">
+            <a href="https://discord.gg/roastral" class="download">Download</a>
+            <a href="https://discord.gg/roastral" class="discord">Discord</a>
         </div>
     </div>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/hoa.js"></script>
+
+    <script>
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
 </body>
+</html>
